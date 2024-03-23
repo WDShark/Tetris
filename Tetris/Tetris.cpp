@@ -25,9 +25,6 @@ void Tetris::showWelcome()
 
 	setbkmode(TRANSPARENT); // Í¸Ã÷±³¾°
 
-
-
-
 	while (1)
 	{
 		for (unsigned char i = 0; i < welcomeImgSize; i++)
@@ -93,7 +90,7 @@ unsigned int Tetris::getTimeDelay()
 	}
 	else
 	{
-		rst = cnt - lastCnt;
+		rst = (unsigned)(cnt - lastCnt);
 	}
 	lastCnt = cnt;
 	
@@ -288,10 +285,10 @@ void Tetris::showText()
 	outtextxy(668, 815, txt);
 
 	sprintf_s(txt, sizeof(txt), "%d", txtSpeed);
-	outtextxy(192 - f.lfWidth * (strlen(txt) - 1), 730, txt);
+	outtextxy(192 - f.lfWidth * ((int)strlen(txt) - 1), 730, txt);
 
 	sprintf_s(txt, sizeof(txt), "%d", txtLines);
-	outtextxy(192 - f.lfWidth * (strlen(txt) - 1), 815, txt);
+	outtextxy(192 - f.lfWidth * ((int)strlen(txt) - 1), 815, txt);
 }
 
 void Tetris::restart()

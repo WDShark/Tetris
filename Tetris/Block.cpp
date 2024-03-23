@@ -42,7 +42,7 @@ Block::Block()
 			getimage(imgBlock[i], i * size, 0, size, size);
 		}
 		SetWorkingImage();
-		srand(time(NULL));
+		srand((unsigned)time(NULL));
 	}
 	type = BlockType(rand() % TYPE_NUM);
 	img = imgBlock[type];
