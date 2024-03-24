@@ -259,6 +259,7 @@ void Tetris::showGameOver()
 	mciSendString("stop ../res/bg.mp3", 0, 0, 0);
 	mciSendString("play ../res/over.mp3", 0, 0, 0);
 	putimage(leftMargin, 430, &imgGameOver);
+	outtextxy(leftMargin-90, 490, "press any key to restart");
 	_getch();
 }
 
